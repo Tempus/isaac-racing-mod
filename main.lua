@@ -2488,6 +2488,12 @@ function RacingPlus:PostUpdate()
       local eff = e:ToEffect()
       eff:SetTimeout(20)
     end
+
+    -- Make Fireworks quieter
+    local sfx = SFXManager()
+    if sfx:IsPlaying(SoundEffect.SOUND_BOSS1_EXPLOSIONS) then
+      sfx:AdjustVolume(SoundEffect.SOUND_BOSS1_EXPLOSIONS, 0.25)
+    end
   end
 
 end
